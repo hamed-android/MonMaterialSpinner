@@ -117,10 +117,13 @@ public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.A
     *   **************************************************************
      */
 
-    public void setEvents(Events events) {
+//    public void setEvents(Events events) {
+//        this.events = events;
+//    }
+
+    public void setEveryEvents(Events events) {
         this.events = events;
     }
-
 
     /*
     * **********************************************************************************

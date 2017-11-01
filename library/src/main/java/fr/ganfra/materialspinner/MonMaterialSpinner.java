@@ -15,10 +15,6 @@ public class MonMaterialSpinner extends MaterialSpinner  {
 
 
 
-    public void setEvents(Events events) {
-        super.setEvents(events);
-    }
-
     public void init(){
 
     }
@@ -47,8 +43,6 @@ public class MonMaterialSpinner extends MaterialSpinner  {
             arr.addAll(items);
 
         arr.setDropDownViewResource(R.layout.sp2);
-
-
         setAdapter(arr);
 
     }

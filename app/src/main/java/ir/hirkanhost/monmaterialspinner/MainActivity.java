@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //events :
-        spinner.setEvents(new Events() {
+        spinner.setEveryEvents(new Events() {
             @Override
             public void OnItemSelected(MonItem item) {
                 Toast.makeText(MainActivity.this, "Selected ID : " + item.getId(),Toast.LENGTH_SHORT).show();
