@@ -5,5 +5,5 @@ package fr.ganfra.materialspinner;
  */
 
 public interface Events {
-    void OnItemSelected();
+    void OnItemSelected(MonItem item);
 }

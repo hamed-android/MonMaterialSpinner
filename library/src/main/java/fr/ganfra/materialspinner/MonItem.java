@@ -29,4 +29,9 @@ public class MonItem {
         this.setId(id);
         setTitle(title);
     }
+
+    @Override
+    public String toString() {
+        return title;
+    }
 }

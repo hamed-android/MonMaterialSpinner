@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import fr.ganfra.materialspinner.Events;
 import fr.ganfra.materialspinner.MaterialSpinner;
 import fr.ganfra.materialspinner.MonItem;
 import fr.ganfra.materialspinner.MonMaterialSpinner;
@@ -24,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinner);
 
 
+        ////////////////////////
+        //Samples :
+        ////////////////////////
         MonItem monItem1=new MonItem(1,"حامد عباسی");
         MonItem monItem2=new MonItem(2,"رضا محمدی");
         MonItem monItem3=new MonItem(3,"علی کریمی");
@@ -33,7 +38,17 @@ public class MainActivity extends AppCompatActivity {
         list.add(monItem2);
         list.add(monItem3);
 
+        //Set :
         spinner.setItems(list);
+
+
+        //events :
+        spinner.setEvents(new Events() {
+            @Override
+            public void OnItemSelected(MonItem item) {
+                Toast.makeText(MainActivity.this, "Selected ID : " + item.getId(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

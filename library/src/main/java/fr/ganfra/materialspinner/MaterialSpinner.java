@@ -26,9 +26,12 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.AnimatorUpdateListener {
+
+    Events events=null;
 
     public static final int DEFAULT_ARROW_WIDTH_DP = 12;
 
@@ -114,6 +117,9 @@ public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.A
     *   **************************************************************
      */
 
+    public void setEvents(Events events) {
+        this.events = events;
+    }
 
 
     /*
@@ -518,6 +524,7 @@ public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.A
     @Override
     public void setOnItemSelectedListener(final OnItemSelectedListener listener) {
 
+
         final OnItemSelectedListener onItemSelectedListener = new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -539,10 +546,17 @@ public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.A
                     position = hint != null ? position - 1 : position;
                     listener.onItemSelected(parent, view, position, id);
                 }
+
+                MonItem selectedItem = (MonItem) getAdapter().getItem(position);
+                if(events!=null){
+                    events.OnItemSelected(selectedItem);
+                }
+                //Toast.makeText(getContext(), "onItemSelected!" + .toString(),Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+                events.OnItemSelected(null);
                 if (listener != null) {
                     listener.onNothingSelected(parent);
                 }
@@ -874,6 +888,7 @@ public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.A
         return (hintAdapter == null || position < 0) ? INVALID_ROW_ID : hintAdapter.getItemId(position);
     }
 
+
     /*
      * **********************************************************************************
      * INNER CLASS
@@ -959,6 +974,9 @@ public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.A
             textView.setTag(HINT_TYPE);
             if (hintTextSize != -1)
                 textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, hintTextSize);
+
+
+
             return textView;
         }
 

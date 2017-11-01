@@ -11,8 +11,13 @@ import java.util.ArrayList;
  * Created by hamed on 11/1/2017.
  */
 
-public class MonMaterialSpinner extends MaterialSpinner implements Events  {
+public class MonMaterialSpinner extends MaterialSpinner  {
 
+
+
+    public void setEvents(Events events) {
+        super.setEvents(events);
+    }
 
     public void init(){
 
@@ -32,6 +37,8 @@ public class MonMaterialSpinner extends MaterialSpinner implements Events  {
         init();
     }
 
+
+
     public void setItems(ArrayList<MonItem> items){
 
         MyArrayAdapter arr=new MyArrayAdapter(getContext(), 0);
@@ -39,15 +46,10 @@ public class MonMaterialSpinner extends MaterialSpinner implements Events  {
         if(items!=null)
             arr.addAll(items);
 
-        arr.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        arr.setDropDownViewResource(R.layout.sp2);
 
 
         setAdapter(arr);
-
-    }
-
-    @Override
-    public void OnItemSelected() {
 
     }
 

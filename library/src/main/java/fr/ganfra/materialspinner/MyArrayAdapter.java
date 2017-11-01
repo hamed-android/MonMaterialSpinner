@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckedTextView;
 import android.widget.TextView;
 
 /**
@@ -25,12 +26,13 @@ public class MyArrayAdapter extends ArrayAdapter<MonItem> {
 
         if(convertView==null){
             convertView = LayoutInflater.from(getContext())
-                    .inflate(android.R.layout.simple_spinner_item,parent,false);
+                    .inflate(R.layout.sp1,parent,false);
         }
         MonItem item = getItem(position);
 
         TextView text1 = convertView.findViewById(android.R.id.text1);
 
+        //text1.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
 
         text1.setText(item.getTitle());
 
