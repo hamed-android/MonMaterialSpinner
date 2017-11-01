@@ -29,6 +29,15 @@ Forked from (ganfra/MaterialSpinner)
 </div>
 
 
+<div class="highlight highlight-text-xml">
+    <pre>
+       <ul>
+            <li>spinner.setItems(list)</li>
+            <li>spinner.setEveryEvents</li>
+            <li>spinner.getCurrentItem()</li>
+           
+       </ul>
+</div
 
 <div class="highlight highlight-text-xml">
     <pre>
@@ -61,6 +70,11 @@ Forked from (ganfra/MaterialSpinner)
         });
     
     
+        
+        Button btn=findViewById(R.id.btn);
+        btn.setOnClickListener(view -> {
+            Toast.makeText(MainActivity.this, "Selected ID : " + spinner.getCurrentItem().getId(),Toast.LENGTH_SHORT).show();
+        });
 
         
 </div>

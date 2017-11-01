@@ -111,11 +111,16 @@ public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.A
     private Integer mDropDownHintView;
     private Integer mHintView;
 
+
+
+
     /*
     *   **************************************************************
     *       Hamed Abasi :
     *   **************************************************************
      */
+
+    private MonItem currentItem=null;
 
 //    public void setEvents(Events events) {
 //        this.events = events;
@@ -123,6 +128,10 @@ public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.A
 
     public void setEveryEvents(Events events) {
         this.events = events;
+    }
+
+    public MonItem getCurrentItem() {
+        return currentItem;
     }
 
     /*
@@ -554,6 +563,7 @@ public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.A
                 if(events!=null){
                     events.OnItemSelected(selectedItem);
                 }
+                currentItem = selectedItem;
                 //Toast.makeText(getContext(), "onItemSelected!" + .toString(),Toast.LENGTH_SHORT).show();
             }
 

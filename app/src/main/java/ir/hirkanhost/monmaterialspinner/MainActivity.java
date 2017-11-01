@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -48,6 +49,12 @@ public class MainActivity extends AppCompatActivity {
             public void OnItemSelected(MonItem item) {
                 Toast.makeText(MainActivity.this, "Selected ID : " + item.getId(),Toast.LENGTH_SHORT).show();
             }
+        });
+
+
+        Button btn=findViewById(R.id.btn);
+        btn.setOnClickListener(view -> {
+            Toast.makeText(MainActivity.this, "Selected ID : " + spinner.getCurrentItem().getId(),Toast.LENGTH_SHORT).show();
         });
     }
 
