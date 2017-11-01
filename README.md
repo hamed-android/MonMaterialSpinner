@@ -1,6 +1,10 @@
 Forked from (ganfra/MaterialSpinner)
 
 
+
+<hr />
+
+
 <fr.ganfra.materialspinner.MonMaterialSpinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
@@ -14,3 +18,4 @@ Forked from (ganfra/MaterialSpinner)
         app:ms_hint="hint"
         app:ms_multiline="false"
         app:ms_thickness="2dp" />
+        
