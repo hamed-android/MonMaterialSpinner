@@ -36,7 +36,6 @@ Forked from (ganfra/MaterialSpinner)
             <li>spinner.setEveryEvents</li>
             <li>spinner.getCurrentItem()</li>
            
-       </ul>
 </div
 
 <div class="highlight highlight-text-xml">
