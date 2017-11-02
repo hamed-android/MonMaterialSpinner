@@ -122,11 +122,17 @@ public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.A
 
     private MonItem currentItem=null;
 
-//    public void setEvents(Events events) {
-//        this.events = events;
-//    }
-
+    /**
+     *
+     * @deprecated use {@link #setEvents(Events)} instead
+     */
+    @Deprecated
     public void setEveryEvents(Events events) {
+        setEvents(events);
+    }
+
+    //another name of setEveryEvents
+    public void setEvents(Events events) {
         this.events = events;
     }
 
