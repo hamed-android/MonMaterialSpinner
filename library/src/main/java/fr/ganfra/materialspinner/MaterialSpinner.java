@@ -575,7 +575,10 @@ public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.A
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                events.OnItemSelected(null);
+                if(events!=null){
+                    events.OnItemSelected(null);
+                }
+
                 if (listener != null) {
                     listener.onNothingSelected(parent);
                 }
